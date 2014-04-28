@@ -1,4 +1,5 @@
 DataSecW4
 =========
-- Đầu tiên cần chạy hàm main trong class ReadFile
-- Sau đó chạy hàm main trong class K_Mean
+- Đầu tiên mọi người cần cho file nguồn baomoi_20140408050320.tsv vao thư mục input.
+- Sau đó cần chạy hàm main trong class ReadFile.
+- Cuối cùng chạy hàm main trong class K_Mean.
