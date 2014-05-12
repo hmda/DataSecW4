@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.LinkedList;
-import java.util.Random;
 
 import BST.BST;
 import Cluster.Cluster;
@@ -18,7 +17,7 @@ public class K_Mean {
 	private static LinkedList<String> vectorKey = new LinkedList<String>();
     private static LinkedList<Vector> vectors = new LinkedList<Vector>();
     private static LinkedList<Cluster> clusters , newClusters;
-    private static int k, n, q=0, i , articles, m, j;
+    private static int k, n, q=0, i , articles, m;
     private static double ranges[][];
     private static BST tree;
     private static long find;
@@ -30,10 +29,9 @@ public class K_Mean {
 	     clusters = new LinkedList<Cluster>();
 		 newClusters = new LinkedList<Cluster>();
 	     
-		 tagFile = "input_Cluster\\tag.txt";
+		 tagFile = "input_Cluster\\baomoi_tag.txt";
 		 tokenFile = "input_Cluster\\token.txt";
 	     getKeyList(tagFile);
-	     Random r = new Random();
 	     
 		 while(q == 0){
 		 try {
@@ -63,8 +61,7 @@ public class K_Mean {
 	       System.out.println("Computing Vectors!");
 			for (int i = 0; i < k; i++) {
 				clusters.add(new Cluster());
-				j = r.nextInt(n);
-				clusters.get(i).setCenter(vectors.get(j));
+				clusters.get(i).setCenter(vectors.get(i));
 			}
 			int times = 0;
 			while (true) {
